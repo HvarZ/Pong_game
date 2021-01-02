@@ -18,9 +18,12 @@ public:
     Paddle(sf::RenderWindow* _window, int player);
 
     void draw();
-    void move(float time);
+    void move();
 
     void upScore() noexcept;
+    void showScore() noexcept;
+
+    [[nodiscard]] auto get_rectangle() -> sf::RectangleShape;
 };
 
 

@@ -1,4 +1,5 @@
 #include <Paddle.hpp>
+#include <Ball.hpp>
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Pong");
@@ -6,6 +7,8 @@ int main() {
 
     Paddle player_1(&window, 1);
     Paddle player_2(&window, 2);
+
+    Ball ball(&window);
 
 
     while (window.isOpen()) {
@@ -18,18 +21,18 @@ int main() {
         }
 
         window.clear();
-
-        sf::Clock clock;
-
         window.setVerticalSyncEnabled(true);
-        clock.restart();
 
-        player_1.move(clock.getElapsedTime().asMilliseconds());
-        player_2.move(clock.getElapsedTime().asMilliseconds());
+        player_1.move();
+        player_2.move();
+        ball.move(player_1, player_2);
 
 
         player_1.draw();
         player_2.draw();
+        ball.draw();
+
+
         window.display();
     }
 

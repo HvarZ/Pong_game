@@ -2,18 +2,21 @@
 #define PONG_BALL_H
 
 #include <SFML/Graphics.hpp>
+#include <Paddle.hpp>
 
-class Ball {
+class Ball final {
 private:
     sf::RenderWindow* window;
-    sf::RectangleShape shape;
-    int x;
-    int y;
+    sf::CircleShape shape;
+    float speed_x;
+    float speed_y;
 
 public:
     explicit Ball(sf::RenderWindow* _window) noexcept;
 
+    void move(Paddle& player_1, Paddle& player_2);
 
+    void draw();
 };
 
 

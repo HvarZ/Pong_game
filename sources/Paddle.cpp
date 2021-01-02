@@ -16,7 +16,7 @@ void Paddle::draw() {
     window->draw(rectangle);
 }
 
-void Paddle::move(float time) {
+void Paddle::move() {
     if (player == 1) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && rectangle.getPosition().y > 50) {
             rectangle.move(0, -speed);
@@ -36,4 +36,8 @@ void Paddle::move(float time) {
 
 void Paddle::upScore() noexcept {
     score++;
+}
+
+auto Paddle::get_rectangle() -> sf::RectangleShape {
+    return rectangle;
 }
