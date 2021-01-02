@@ -17,7 +17,7 @@ void Paddle::draw() {
 }
 
 void Paddle::move() {
-    if (player == 1) {
+    if (player != 1) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && rectangle.getPosition().y > 50) {
             rectangle.move(0, -speed);
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && rectangle.getPosition().y < 550) {
