@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Paddle.hpp
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+
+/Users/zahar/CLionProjects/game/sources/Paddle.cpp
+Paddle.hpp
+-
+
