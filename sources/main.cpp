@@ -27,9 +27,12 @@ int main() {
         player_2.move();
         ball.move(player_1, player_2);
 
-
         player_1.draw();
+        player_1.drawScore();
+
         player_2.draw();
+        player_2.drawScore();
+
         ball.draw();
 
 

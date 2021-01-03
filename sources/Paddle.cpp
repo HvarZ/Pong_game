@@ -41,3 +41,21 @@ void Paddle::upScore() noexcept {
 auto Paddle::get_rectangle() -> sf::RectangleShape {
     return rectangle;
 }
+
+void Paddle::drawScore() const noexcept {
+    sf::Font font;
+    font.loadFromFile("../fonts/Impact_Regular.ttf");
+
+    sf::Text score_text("", font);
+    score_text.setString(std::to_string(score));
+    score_text.setCharacterSize(30);
+    score_text.setFillColor(sf::Color::White);
+
+    if (player != 1) {
+        score_text.setPosition(sf::Vector2f(350, 0));
+    } else {
+        score_text.setPosition(sf::Vector2f(450, 0));
+    }
+
+    window->draw(score_text);
+}

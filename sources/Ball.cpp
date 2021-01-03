@@ -35,6 +35,20 @@ void Ball::move(Paddle& player_1, Paddle& player_2) {
         }
     }
 
+    if (shape.getPosition().x < 0) {
+        player_1.upScore();
+        speed_x = 0;
+        speed_y = 0;
+        shape.setPosition(400, 300);
+    }
+
+    if (shape.getPosition().x > 800) {
+        player_2.upScore();
+        speed_x = 0;
+        speed_y = 0;
+        shape.setPosition(400, 300);
+    }
+
 
     shape.move(speed_x, speed_y);
 }

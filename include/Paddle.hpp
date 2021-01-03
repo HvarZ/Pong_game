@@ -21,7 +21,7 @@ public:
     void move();
 
     void upScore() noexcept;
-    void showScore() noexcept;
+    void drawScore() const noexcept;
 
     [[nodiscard]] auto get_rectangle() -> sf::RectangleShape;
 };
