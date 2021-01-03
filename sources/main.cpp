@@ -3,7 +3,7 @@
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Pong");
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(45);
 
     Paddle player_1(&window, 1);
     Paddle player_2(&window, 2);
