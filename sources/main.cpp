@@ -21,7 +21,6 @@ int main() {
         }
 
         window.clear();
-        window.setVerticalSyncEnabled(true);
 
         player_1.move();
         player_2.move();
