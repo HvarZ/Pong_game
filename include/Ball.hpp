@@ -1,5 +1,5 @@
-#ifndef PONG_BALL_H
-#define PONG_BALL_H
+#ifndef PONG_BALL_HPP
+#define PONG_BALL_HPP
 
 #include <SFML/Graphics.hpp>
 #include <Paddle.hpp>
@@ -21,4 +21,4 @@ public:
 
 
 
-#endif //PONG_BALL_H
+#endif //PONG_BALL_HPP
