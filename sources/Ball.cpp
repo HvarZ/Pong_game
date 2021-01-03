@@ -7,7 +7,7 @@ Ball::Ball(sf::RenderWindow *_window) noexcept : window(_window), speed_x(0), sp
     shape.setFillColor(sf::Color::White);
 }
 
-void Ball::move(Paddle& player_1, Paddle& player_2) {
+void Ball::move(Paddle& player_1, Paddle& player_2) noexcept {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
         shape.setPosition(400, 300);
         speed_x = -5;
@@ -53,6 +53,6 @@ void Ball::move(Paddle& player_1, Paddle& player_2) {
     shape.move(speed_x, speed_y);
 }
 
-void Ball::draw() {
+void Ball::draw() noexcept {
     window->draw(shape);
 }

@@ -35,7 +35,6 @@ int main() {
 
         ball.draw();
 
-
         window.display();
     }
 

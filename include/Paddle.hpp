@@ -17,8 +17,8 @@ private:
 public:
     Paddle(sf::RenderWindow* _window, int player);
 
-    void draw();
-    void move();
+    void draw() noexcept;
+    void move() noexcept;
 
     void upScore() noexcept;
     void drawScore() const noexcept;

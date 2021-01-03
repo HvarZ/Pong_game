@@ -12,11 +12,11 @@ Paddle::Paddle(sf::RenderWindow *_window, int _player)
     }
 }
 
-void Paddle::draw() {
+void Paddle::draw() noexcept {
     window->draw(rectangle);
 }
 
-void Paddle::move() {
+void Paddle::move() noexcept {
     if (player != 1) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && rectangle.getPosition().y > 50) {
             rectangle.move(0, -speed);

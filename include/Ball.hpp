@@ -14,9 +14,9 @@ private:
 public:
     explicit Ball(sf::RenderWindow* _window) noexcept;
 
-    void move(Paddle& player_1, Paddle& player_2);
+    void move(Paddle& player_1, Paddle& player_2) noexcept;
 
-    void draw();
+    void draw() noexcept;
 };
 
 
