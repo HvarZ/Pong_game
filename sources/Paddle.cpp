@@ -1,14 +1,14 @@
 #include <Paddle.hpp>
 
 Paddle::Paddle(sf::RenderWindow *_window, int _player)
-                : window(_window), y(300), score(0), player(_player), speed(5) {
+                : window(_window), score(0), player(_player), speed(5) {
     rectangle.setSize(sf::Vector2f(10, 100));
     rectangle.setOrigin(5, 50);
 
     if (player == 1) {
-        rectangle.setPosition(25, static_cast<float>(y));
+        rectangle.setPosition(25, 300);
     } else {
-        rectangle.setPosition(775, static_cast<float>(y));
+        rectangle.setPosition(775, 300);
     }
 }
 

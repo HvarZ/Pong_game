@@ -9,7 +9,6 @@ class Paddle final {
 private:
     sf::RenderWindow* window;
     sf::RectangleShape rectangle;
-    double y;
     int player;
     int score;
     float speed;
