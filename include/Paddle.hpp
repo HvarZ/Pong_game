@@ -5,16 +5,17 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+
 class Paddle final {
 private:
-    sf::RenderWindow* window;
-    sf::RectangleShape rectangle;
-    int player;
-    int score;
-    float speed;
+    sf::RenderWindow* window_;
+    sf::RectangleShape rectangle_;
+    int player_;
+    int score_;
+    float speed_;
 
 public:
-    Paddle(sf::RenderWindow* _window, int player);
+    Paddle(sf::RenderWindow* window, int player);
 
     void draw() noexcept;
     void move() noexcept;
@@ -22,7 +23,7 @@ public:
     void upScore() noexcept;
     void drawScore() const noexcept;
 
-    [[nodiscard]] auto get_rectangle() -> sf::RectangleShape;
+    [[nodiscard]] auto getRectangle() -> sf::RectangleShape;
 };
 
 

@@ -1,58 +1,58 @@
 #include <Ball.hpp>
 #include <Paddle.hpp>
 
-Ball::Ball(sf::RenderWindow *_window) noexcept : window(_window), speed_x(0), speed_y(0) {
-    shape.setPosition(sf::Vector2f(400, 300));
-    shape.setRadius(10);
-    shape.setFillColor(sf::Color::White);
+Ball::Ball(sf::RenderWindow* window) noexcept : window_(window), speedX_(0), speedY_(0) {
+    shape_.setPosition(sf::Vector2f(400, 300));
+    shape_.setRadius(10);
+    shape_.setFillColor(sf::Color::White);
 }
 
-void Ball::move(Paddle& player_1, Paddle& player_2) noexcept {
+void Ball::move(Paddle& player1, Paddle& player2) noexcept {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-        shape.setPosition(400, 300);
-        speed_x = -5;
-        speed_y = -5;
+        shape_.setPosition(400, 300);
+        speedX_ = -5;
+        speedY_ = -5;
     }
 
-    if (shape.getPosition().y < 0) {
-        speed_y = 5;
-    } else if (shape.getPosition().y > 600 - 15) {
-        speed_y = -5;
+    if (shape_.getPosition().y < 0) {
+        speedY_ = 5;
+    } else if (shape_.getPosition().y > 600 - 15) {
+        speedY_ = -5;
     }
-    if (shape.getPosition().x < 0) {
-        speed_y = 5;
+    if (shape_.getPosition().x < 0) {
+        speedY_ = 5;
     }
 
-    if (shape.getPosition().y <=  player_1.get_rectangle().getPosition().y + 5 && shape.getPosition().x <= player_1.get_rectangle().getPosition().x + 10) {
-        if (shape.getPosition().y >= player_1.get_rectangle().getPosition().y - 55) {
-            speed_x = 5;
+    if (shape_.getPosition().y <=  player1.getRectangle().getPosition().y + 5 && shape_.getPosition().x <= player1.getRectangle().getPosition().x + 10) {
+        if (shape_.getPosition().y >= player1.getRectangle().getPosition().y - 55) {
+            speedX_ = 5;
         }
     }
 
-    if (shape.getPosition().y <=  player_2.get_rectangle().getPosition().y + 5 && shape.getPosition().x >= player_2.get_rectangle().getPosition().x - 30) {
-        if (shape.getPosition().y >= player_2.get_rectangle().getPosition().y - 55) {
-            speed_x = -5;
+    if (shape_.getPosition().y <=  player2.getRectangle().getPosition().y + 5 && shape_.getPosition().x >= player2.getRectangle().getPosition().x - 30) {
+        if (shape_.getPosition().y >= player2.getRectangle().getPosition().y - 55) {
+            speedX_ = -5;
         }
     }
 
-    if (shape.getPosition().x < 0) {
-        player_1.upScore();
-        speed_x = 0;
-        speed_y = 0;
-        shape.setPosition(400, 300);
+    if (shape_.getPosition().x < 0) {
+        player1.upScore();
+        speedX_ = 0;
+        speedY_ = 0;
+        shape_.setPosition(400, 300);
     }
 
-    if (shape.getPosition().x > 800) {
-        player_2.upScore();
-        speed_x = 0;
-        speed_y = 0;
-        shape.setPosition(400, 300);
+    if (shape_.getPosition().x > 800) {
+        player2.upScore();
+        speedX_ = 0;
+        speedY_ = 0;
+        shape_.setPosition(400, 300);
     }
 
 
-    shape.move(speed_x, speed_y);
+    shape_.move(speedX_, speedY_);
 }
 
 void Ball::draw() noexcept {
-    window->draw(shape);
+    window_->draw(shape_);
 }

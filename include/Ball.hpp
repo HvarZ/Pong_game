@@ -6,15 +6,15 @@
 
 class Ball final {
 private:
-    sf::RenderWindow* window;
-    sf::CircleShape shape;
-    float speed_x;
-    float speed_y;
+    sf::RenderWindow* window_;
+    sf::CircleShape shape_;
+    float speedX_;
+    float speedY_;
 
 public:
-    explicit Ball(sf::RenderWindow* _window) noexcept;
+    explicit Ball(sf::RenderWindow* window) noexcept;
 
-    void move(Paddle& player_1, Paddle& player_2) noexcept;
+    void move(Paddle& player1, Paddle& player2) noexcept;
 
     void draw() noexcept;
 };

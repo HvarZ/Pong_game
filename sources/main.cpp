@@ -33,9 +33,8 @@ int main() {
         player_2.drawScore();
 
         ball.draw();
-
         window.display();
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
